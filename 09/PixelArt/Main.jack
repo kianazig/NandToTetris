@@ -1,0 +1,67 @@
+class Main{
+
+	
+	static Grid grid;
+	static PixelController pixelController;
+
+	
+	function void main(){
+	
+		var char key;
+		var boolean exit;
+		let key = 0;
+		let exit = false;
+		
+		let pixelController = PixelController.new(20);
+		
+		do Output.printString("Welcome to Pixel Art!");
+		do Output.println();
+		do Output.println();
+		
+		do Output.printString("To create a new pixel, press A.");
+		do Output.println();
+		do Output.printString("To erase a pixel, move over it with a new pixel.");
+		do Output.println();
+		
+		do Output.printString("You can use your arrow keys to move the pixel.");
+		do Output.println();
+		do Output.println();
+		
+		do Output.printString("Press ESC when your masterpiece is done!");
+		do Output.println();
+		do Output.println();
+		
+		do Output.printString("Press Any Key to Continue . . .");
+	
+		while(key = 0){
+			let key = Keyboard.keyPressed();
+		}
+		
+		do Screen.clearScreen();
+		
+		do grid.createGrid();
+		
+		do Sys.wait(100);
+		
+		while(~exit){
+		
+			let key = 0;
+			
+			while(key = 0){
+				let key = Keyboard.keyPressed();
+			}
+			
+			if (key = 140) { let exit = true; }
+			if (key = 65) { do pixelController.createNewPixel(); }
+			if (key = 131) { do pixelController.moveUp(); }
+			if (key = 133) { do pixelController.moveDown(); }
+			if (key = 130) { do pixelController.moveLeft(); }
+			if (key = 132) { do pixelController.moveRight(); }
+			
+			do Sys.wait(150);
+		}
+		
+		return;
+	}
+
+}

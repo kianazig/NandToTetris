@@ -1,0 +1,67 @@
+class PixelController{
+
+	field int x, y;
+	field int size;
+	
+	constructor PixelController new(int Asize){
+		let size = Asize;
+		return this;
+	}
+	
+	method void createNewPixel(){
+		let x = 0;
+		let y = 0;
+		do draw();
+		return;
+	}
+	
+	method void draw(){
+		do Screen.setColor(true);
+		do Screen.drawRectangle(x, y, x+size, y+size);
+		return;
+	}
+	
+	method void erase(){
+		do Screen.setColor(false);
+		do Screen.drawRectangle(x+1, y+1, x+size-1, y+size-1);
+		return;
+	}
+	
+	method void moveUp(){
+		if(~(y=0)){
+			do erase();
+			let y = y - size;
+			do draw();
+		}		
+		return;
+	}
+	
+	method void moveDown(){
+	
+		if(~(y=220)){
+			do erase();
+			let y = y + size;
+			do draw();
+		}
+		return;
+	}
+	
+	method void moveLeft(){
+		if(~(x=0)){
+			do erase();
+			let x = x - size;
+			do draw();
+		}
+		return;
+	}
+	
+	method void moveRight(){
+		if(~(x=480)){
+			do erase();
+			let x = x + size;
+			do draw();
+		}
+		return;
+	}
+
+}

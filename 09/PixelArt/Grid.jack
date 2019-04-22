@@ -1,0 +1,33 @@
+class Grid{
+
+	constructor Grid new(int x){
+		return this;
+	}
+	
+	method void createGrid(){
+		do createVerticalLines();
+		do createHorizontalLines();
+		return;
+	}
+	
+	method void createVerticalLines(){
+		var int x;
+		let x = 0;
+		while(x<511){
+			do Screen.drawLine(x, 0, x, 240);
+			let x = x + 20;
+		}
+		return;
+	}
+	
+	method void createHorizontalLines(){
+		var int y;
+		let y = 0;
+		while(y<255){
+			do Screen.drawLine(0, y, 500, y);
+			let y = y + 20;
+		}
+		return;
+	}
+
+}

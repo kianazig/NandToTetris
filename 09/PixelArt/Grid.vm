@@ -1,0 +1,67 @@
+function Grid.new 0
+push constant 0
+call Memory.alloc 1
+pop pointer 0
+push pointer 0
+return
+function Grid.createGrid 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Grid.createVerticalLines 1
+pop temp 0
+push pointer 0
+call Grid.createHorizontalLines 1
+pop temp 0
+push constant 0
+return
+function Grid.createVerticalLines 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 511
+lt
+not
+if-goto WHILE_END0
+push local 0
+push constant 0
+push local 0
+push constant 240
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 20
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Grid.createHorizontalLines 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 255
+lt
+not
+if-goto WHILE_END0
+push constant 0
+push local 0
+push constant 500
+push local 0
+call Screen.drawLine 4
+pop temp 0
+push local 0
+push constant 20
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
